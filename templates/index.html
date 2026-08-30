@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Delay Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    
+</head>
+
+<body>
+    <div class="container">
+        <h1>Flight Delay Prediction</h1>
+        
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Distance (km)</label>
+                    <input type="number" step="any" name="distance_km" placeholder="e.g. 450" required>
+                </div>
+                <div class="input-group">
+                    <label>Scheduled Hour</label>
+                    <input type="number" name="scheduled_hour" placeholder="0-23" required>
+                </div>
+                <div class="input-group">
+                    <label>Day of Week</label>
+                    <input type="number" name="day_of_week" placeholder="1-7" required>
+                </div>
+                <div class="input-group">
+                    <label>Month</label>
+                    <input type="number" name="month" placeholder="1-12" required>
+                </div>
+                <div class="input-group">
+                    <label>Airline Rating</label>
+                    <input type="number" step="any" name="airline_rating" placeholder="1.0 - 5.0" required>
+                </div>
+                <div class="input-group">
+                    <label>Previous Delays</label>
+                    <input type="number" name="num_previous_delays" placeholder="e.g. 2" required>
+                </div>
+                <div class="input-group">
+                    <label>Weather Severity Index</label>
+                    <input type="number" step="any" name="weather_severity_index" placeholder="0 - 100" required>
+                </div>
+                <div class="input-group">
+                    <label>Air Traffic Density</label>
+                    <input type="number" step="any" name="air_traffic_density" placeholder="e.g. 0.85" required>
+                </div>
+                <div class="input-group">
+                    <label>Aircraft Age (years)</label>
+                    <input type="number" name="aircraft_age_years" placeholder="e.g. 5" required>
+                </div>
+                <div class="input-group">
+                    <label>Wind Speed (km/h)</label>
+                    <input type="number" step="any" name="wind_speed_kmh" placeholder="e.g. 15.5" required>
+                </div>
+                <div class="input-group">
+                    <label>Precipitation (mm)</label>
+                    <input type="number" step="any" name="precipitation_mm" placeholder="e.g. 0.0" required>
+                </div>
+                <div class="input-group">
+                    <label>Temperature (°C)</label>
+                    <input type="number" step="any" name="temperature_c" placeholder="e.g. 22" required>
+                </div>
+                <div class="input-group">
+                    <label>Visibility (km)</label>
+                    <input type="number" step="any" name="visibility_km" placeholder="e.g. 10" required>
+                </div>
+                <div class="input-group">
+                    <label>Runway Congestion Index</label>
+                    <input type="number" step="any" name="runway_congestion_index" placeholder="e.g. 0.4" required>
+                </div>
+                <div class="input-group">
+                    <label>Crew Rest Hours</label>
+                    <input type="number" step="any" name="crew_rest_hours" placeholder="e.g. 12" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Predict Delay</button>
+            </div>
+        </form>
+
+       
+            <div class="result">{{ prediction_text }}</div>
+        
+    </div>
+</body>
+
+</html>
