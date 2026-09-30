@@ -32,3 +32,6 @@ A machine learning web application that predicts flight departure delays based o
 - **ML:** scikit-learn (Linear Regression)
 - **Frontend:** HTML, CSS (Poppins font, Glassmorphism)
 - **Serialization:** Joblib
+
+
+Test GitHub notification
