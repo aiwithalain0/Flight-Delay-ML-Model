@@ -34,4 +34,4 @@ A machine learning web application that predicts flight departure delays based o
 - **Serialization:** Joblib
 
 
-Test GitHub notification 1
+Test GitHub notification 2
